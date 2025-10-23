@@ -1,4 +1,4 @@
-import prismaClient from '../prismaClient';
+import prismaClient from '../prisma/index';
 import { generateRefreshToken, verifyRefreshToken, TokenPayload } from '../utils/jwt';
 
 export class TokenService {

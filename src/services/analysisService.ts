@@ -1,4 +1,4 @@
-import prismaClient from '../prismaClient';
+import prismaClient from '../prisma/index';
 import { analyzeGrains, GrainAnalysisResult, validateGrainType } from '../utils/randomAnalysis';
 import { generatePDFReport, ReportData } from '../utils/pdfGenerator';
 
