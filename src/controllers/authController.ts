@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import bcrypt from 'bcryptjs';
-import prismaClient from '../prismaClient';
+import prismaClient from '../prisma/index';
 import { generateAccessToken, generateRefreshToken } from '../utils/jwt';
 import { TokenService } from '../services/tokenService';
 import { asyncHandler, createValidationError, createConflictError, createUnauthorizedError } from '../middlewares/errorHandler';

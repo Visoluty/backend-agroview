@@ -1,13 +1,17 @@
+import dotenv from 'dotenv';
 import app from './app';
-import prismaClient from './prismaClient';
+import prismaClient from './prisma/index';
 import { TokenService } from './services/tokenService';
+
+// Carregar variáveis de ambiente PRIMEIRO
+dotenv.config();
 
 const PORT = process.env.PORT || 3000;
 
 // Função para inicializar o servidor
 const startServer = async () => {
   try {
-    
+    // Conectar ao banco de dados
     await prismaClient.$connect();
     console.log('✅ Conectado ao banco de dados PostgreSQL');
 
@@ -20,6 +24,8 @@ const startServer = async () => {
       console.log(`🚀 Servidor rodando na porta ${PORT}`);
       console.log(`📱 Ambiente: ${process.env.NODE_ENV || 'development'}`);
       console.log(`🌐 URL: http://localhost:${PORT}`);
+      console.log(`📊 Health Check: http://localhost:${PORT}/health`);
+      console.log(`📚 Swagger Docs: http://localhost:${PORT}/api-docs`);
     });
 
   } catch (error) {

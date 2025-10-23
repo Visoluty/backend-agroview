@@ -1,6 +1,5 @@
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
 import path from 'path';
 import swaggerUi from 'swagger-ui-express';
 
@@ -14,9 +13,6 @@ import analysisRoutes from './routes/analyses';
 
 // Importar configuração do Swagger
 import { swaggerSpec } from './config/swagger';
-
-// Carregar variáveis de ambiente
-dotenv.config();
 
 const app = express();
 
