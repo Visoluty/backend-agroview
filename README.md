@@ -99,6 +99,12 @@ npm start
 
 ## 📚 API Endpoints
 
+### Documentação Interativa (Swagger)
+- **Swagger UI**: `http://localhost:3000/api-docs`
+- **Documentação completa** com exemplos de requisições e respostas
+- **Teste das rotas** diretamente no navegador
+- **Esquemas de dados** detalhados para todos os endpoints
+
 ### Autenticação (`/api/auth`)
 
 | Método | Endpoint | Descrição |

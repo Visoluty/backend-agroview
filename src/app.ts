@@ -2,14 +2,18 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
+import swaggerUi from 'swagger-ui-express';
 
-// Importar middlewares
+// middlewares
 import { errorHandler, notFoundHandler } from './middlewares/errorHandler';
 
-// Importar rotas
+// rotas
 import authRoutes from './routes/auth';
 import imageRoutes from './routes/images';
 import analysisRoutes from './routes/analyses';
+
+// Importar configuração do Swagger
+import { swaggerSpec } from './config/swagger';
 
 // Carregar variáveis de ambiente
 dotenv.config();
@@ -29,6 +33,13 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // Servir arquivos estáticos (imagens)
 app.use('/uploads/images', express.static(path.join(__dirname, '../uploads/images')));
+
+// Configuração do Swagger
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
+  customCss: '.swagger-ui .topbar { display: none }',
+  customSiteTitle: 'AgroView API Documentation',
+  customfavIcon: '/favicon.ico'
+}));
 
 // Middleware de logging em desenvolvimento
 if (process.env.NODE_ENV === 'development') {
@@ -62,7 +73,8 @@ app.get('/', (req, res) => {
       auth: '/api/auth',
       images: '/api/images',
       analyses: '/api/analyses',
-      health: '/health'
+      health: '/health',
+      docs: '/api-docs'
     },
     documentation: 'https://github.com/your-repo/agroview-api'
   });
