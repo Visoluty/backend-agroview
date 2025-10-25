@@ -7,7 +7,7 @@ Este arquivo contém exemplos práticos de como usar a API do AgroView.
 ### Cadastro de Usuário
 
 ```bash
-curl -X POST http://localhost:3000/api/auth/register \
+curl -X POST http://localhost:3055/api/auth/register \
   -H "Content-Type: application/json" \
   -d '{
     "name": "João Silva",
@@ -20,7 +20,7 @@ curl -X POST http://localhost:3000/api/auth/register \
 ### Login
 
 ```bash
-curl -X POST http://localhost:3000/api/auth/login \
+curl -X POST http://localhost:3055/api/auth/login \
   -H "Content-Type: application/json" \
   -d '{
     "email": "joao@exemplo.com",
@@ -50,7 +50,7 @@ curl -X POST http://localhost:3000/api/auth/login \
 ### Processar Imagem de Grãos
 
 ```bash
-curl -X POST http://localhost:3000/api/images/process \
+curl -X POST http://localhost:3055/api/images/process \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -F "image=@caminho/para/imagem.jpg" \
   -F "grainType=Soja"
@@ -84,21 +84,21 @@ curl -X POST http://localhost:3000/api/images/process \
 ### Histórico de Análises
 
 ```bash
-curl -X GET "http://localhost:3000/api/analyses?limit=10" \
+curl -X GET "http://localhost:3055/api/analyses?limit=10" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
 ### Análise Específica
 
 ```bash
-curl -X GET http://localhost:3000/api/analyses/analysis_456 \
+curl -X GET http://localhost:3055/api/analyses/analysis_456 \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
 ### Estatísticas
 
 ```bash
-curl -X GET http://localhost:3000/api/analyses/stats \
+curl -X GET http://localhost:3055/api/analyses/stats \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -132,7 +132,7 @@ curl -X GET http://localhost:3000/api/analyses/stats \
 ### Download do Relatório
 
 ```bash
-curl -X GET http://localhost:3000/api/analyses/analysis_456/report \
+curl -X GET http://localhost:3055/api/analyses/analysis_456/report \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -o relatorio.pdf
 ```
@@ -141,13 +141,13 @@ curl -X GET http://localhost:3000/api/analyses/analysis_456/report \
 
 ```bash
 # Acesse diretamente no navegador:
-http://localhost:3000/api/analyses/analysis_456/export
+http://localhost:3055/api/analyses/analysis_456/export
 ```
 
 ## 🔄 5. Comparar Análises
 
 ```bash
-curl -X POST http://localhost:3000/api/analyses/compare \
+curl -X POST http://localhost:3055/api/analyses/compare \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -189,7 +189,7 @@ curl -X POST http://localhost:3000/api/analyses/compare \
 ## 🔄 6. Renovar Token
 
 ```bash
-curl -X POST http://localhost:3000/api/auth/refresh-token \
+curl -X POST http://localhost:3055/api/auth/refresh-token \
   -H "Content-Type: application/json" \
   -d '{
     "refreshToken": "YOUR_REFRESH_TOKEN"
@@ -201,14 +201,14 @@ curl -X POST http://localhost:3000/api/auth/refresh-token \
 ### Obter Perfil
 
 ```bash
-curl -X GET http://localhost:3000/api/auth/profile \
+curl -X GET http://localhost:3055/api/auth/profile \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
 ### Atualizar Perfil
 
 ```bash
-curl -X PUT http://localhost:3000/api/auth/profile \
+curl -X PUT http://localhost:3055/api/auth/profile \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -222,7 +222,7 @@ curl -X PUT http://localhost:3000/api/auth/profile \
 ### Logout Simples
 
 ```bash
-curl -X POST http://localhost:3000/api/auth/logout \
+curl -X POST http://localhost:3055/api/auth/logout \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -233,7 +233,7 @@ curl -X POST http://localhost:3000/api/auth/logout \
 ### Logout de Todos os Dispositivos
 
 ```bash
-curl -X POST http://localhost:3000/api/auth/logout-all \
+curl -X POST http://localhost:3055/api/auth/logout-all \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
 ```
 
@@ -242,13 +242,13 @@ curl -X POST http://localhost:3000/api/auth/logout-all \
 ### Health Check
 
 ```bash
-curl -X GET http://localhost:3000/health
+curl -X GET http://localhost:3055/health
 ```
 
 ### Informações da API
 
 ```bash
-curl -X GET http://localhost:3000/
+curl -X GET http://localhost:3055/
 ```
 
 ## 🛠️ 10. Scripts Úteis
@@ -258,7 +258,7 @@ curl -X GET http://localhost:3000/
 ```javascript
 const axios = require('axios');
 
-const API_BASE = 'http://localhost:3000/api';
+const API_BASE = 'http://localhost:3055/api';
 
 // Função para fazer login
 async function login(email, password) {
@@ -320,7 +320,7 @@ async function exemplo() {
 import requests
 import json
 
-API_BASE = 'http://localhost:3000/api'
+API_BASE = 'http://localhost:3055/api'
 
 def login(email, password):
     response = requests.post(f'{API_BASE}/auth/login', json={

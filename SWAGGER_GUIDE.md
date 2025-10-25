@@ -6,7 +6,7 @@ A API AgroView possui documentação completa e interativa através do Swagger U
 
 ### 🌐 Acesso à Documentação
 
-**URL**: `http://localhost:3000/api-docs`
+**URL**: `http://localhost:3055/api-docs`
 
 ### ✨ Funcionalidades do Swagger
 
@@ -18,7 +18,7 @@ A API AgroView possui documentação completa e interativa através do Swagger U
 
 ### 🔐 Como Usar a Autenticação no Swagger
 
-1. **Acesse**: `http://localhost:3000/api-docs`
+1. **Acesse**: `http://localhost:3055/api-docs`
 2. **Clique em "Authorize"** (botão verde no topo)
 3. **Cole seu token JWT** no formato: `Bearer SEU_TOKEN_AQUI`
 4. **Clique em "Authorize"** para confirmar
@@ -187,7 +187,7 @@ O Swagger também serve como referência para integração com frontend:
 
 ```javascript
 // Exemplo de integração JavaScript
-const API_BASE = 'http://localhost:3000/api';
+const API_BASE = 'http://localhost:3055/api';
 
 // Login
 const loginResponse = await fetch(`${API_BASE}/auth/login`, {
@@ -206,4 +206,4 @@ const analysesResponse = await fetch(`${API_BASE}/analyses`, {
 
 ---
 
-**Acesse agora**: `http://localhost:3000/api-docs` para explorar a documentação completa!
+**Acesse agora**: `http://localhost:3055/api-docs` para explorar a documentação completa!

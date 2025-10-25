@@ -68,7 +68,7 @@ JWT_SECRET="your-super-secret-jwt-key-here"
 JWT_REFRESH_SECRET="your-super-secret-refresh-key-here"
 
 # Server Configuration
-PORT=3000
+PORT=3055
 NODE_ENV=development
 
 # File Upload
@@ -100,7 +100,7 @@ npm start
 ## 📚 API Endpoints
 
 ### Documentação Interativa (Swagger)
-- **Swagger UI**: `http://localhost:3000/api-docs`
+- **Swagger UI**: `http://localhost:3055/api-docs`
 - **Documentação completa** com exemplos de requisições e respostas
 - **Teste das rotas** diretamente no navegador
 - **Esquemas de dados** detalhados para todos os endpoints
@@ -185,7 +185,7 @@ POST /api/auth/login
 ### Processamento de Imagem
 
 ```bash
-curl -X POST http://localhost:3000/api/images/process \
+curl -X POST http://localhost:3055/api/images/process \
   -H "Authorization: Bearer <token>" \
   -F "image=@imagem.jpg" \
   -F "grainType=Soja"
@@ -291,7 +291,7 @@ NODE_ENV=production
 DATABASE_URL="postgresql://..."
 JWT_SECRET="strong-secret-key"
 JWT_REFRESH_SECRET="strong-refresh-secret"
-PORT=3000
+PORT=3055
 FRONTEND_URL="https://your-frontend.com"
 ```
 

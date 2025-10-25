@@ -6,7 +6,7 @@ import { TokenService } from './services/tokenService';
 // Carregar variáveis de ambiente PRIMEIRO
 dotenv.config();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3055;
 
 // Função para inicializar o servidor
 const startServer = async () => {

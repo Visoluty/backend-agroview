@@ -15,7 +15,7 @@ JWT_SECRET="your-super-secret-jwt-key-here-change-in-production"
 JWT_REFRESH_SECRET="your-super-secret-refresh-key-here-change-in-production"
 
 # Server Configuration
-PORT=3000
+PORT=3055
 NODE_ENV=development
 
 # File Upload
@@ -23,7 +23,7 @@ MAX_FILE_SIZE=5242880
 ALLOWED_FILE_TYPES=image/jpeg,image/png,image/jpg
 
 # Frontend URL (para CORS)
-FRONTEND_URL="http://localhost:3000"
+FRONTEND_URL="http://localhost:3055"
 
 # External API (se necessário)
 EXTERNAL_API_URL=""
@@ -105,24 +105,24 @@ src/
 
 ## 🌐 **URLs Importantes:**
 
-- **API Base**: `http://localhost:3000`
-- **Health Check**: `http://localhost:3000/health`
-- **Swagger Docs**: `http://localhost:3000/api-docs`
-- **Uploads**: `http://localhost:3000/uploads/images/`
+- **API Base**: `http://localhost:3055`
+- **Health Check**: `http://localhost:3055/health`
+- **Swagger Docs**: `http://localhost:3055/api-docs`
+- **Uploads**: `http://localhost:3055/uploads/images/`
 
 ## 🧪 **Testando a API:**
 
 ### 1. Health Check
 ```bash
-curl http://localhost:3000/health
+curl http://localhost:3055/health
 ```
 
 ### 2. Swagger UI
-Acesse: `http://localhost:3000/api-docs`
+Acesse: `http://localhost:3055/api-docs`
 
 ### 3. Cadastro de Usuário
 ```bash
-curl -X POST http://localhost:3000/api/auth/register \
+curl -X POST http://localhost:3055/api/auth/register \
   -H "Content-Type: application/json" \
   -d '{
     "name": "João Silva",
